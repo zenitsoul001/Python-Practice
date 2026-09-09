@@ -1,29 +1,35 @@
-style = "="*50
-q1 = f"{style}\n1. What is the capital of India?\n    (a) Mumbai\n    (b) New Delhi\n    (c) Kolkata\n    (d) Chennai"
-q2 = f"{style}\n2. Which is the largest planet in our solar system?\n    (a) Earth\n    (b) Mars\n    (c) Saturn\n    (d) Jupiter"
-q3 = f"{style}\n3. How many days are there in a leap year?\n    (a) 365\n    (b) 364\n    (c) 366\n    (d) 360"
+from questions import * 
 
 score = 0
+def quiz_master(question,corr_opt,design):
+        global score
 
-def quiz(score):
-    questions =[q1,q2,q3]
-    for question in questions:
-        print(question)
-        user_inp = input("Enter your Answer: ").lower()
-        if question == q1 and user_inp == "b":
-                score += 1
-                print(f"Correct answer Your score is now {score}")
+        while(True):
+                print(f"{design}\n{question}\n{design}\n")
+                user_inp = input("Enter the input between a/b/c/d : ").lower()
+                if user_inp not in ["a","b","c","d"]:
+                        print("Plz provide a valid Input\n")
+                        continue
+                elif user_inp == corr_opt:
+                        score += 1
+                        print(f"\nCorrect! and your Score is {score}\n")
+                        break
+                else:
+                        print("\nIncorrect\n!")
+                        continue
 
-        elif question == q2 and user_inp == "d":
-                score += 1
-                print(f"Correct answer Your score is now {score}")
-  
-        elif question == q3 and user_inp == "c":
-                score += 1
-                print(f"Correct answer Your score is now {score}")
-        else:
-            print("Wrong Answer!")
+All_Questions = [
+    question1, question2, question3, question4,
+    question5, question6, question7, question8,
+    question9, question10, question11, question12
+]                 
 
-    return f"Your Total Score from 3 is {score}"
+x = input("Enter the design: ")
+des = x * 50
+for i in All_Questions:
+        quiz_master(i[0],i[1],des)
 
-print(quiz(score))
+
+
+
+
