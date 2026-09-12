@@ -1,0 +1,39 @@
+# Virtual environment create karna
+
+python -m venv venv
+
+
+# Activate karna
+
+Windows:
+
+venv\Scripts\activate
+
+
+Mac/Linux:
+
+source venv/bin/activate
+
+
+
+# Package install
+
+pip install requests
+
+
+
+# Installed packages dekhna
+
+pip list
+
+
+
+# Requirements file banana
+
+pip freeze > requirements.txt
+
+
+
+# Environment deactivate
+
+deactivate
