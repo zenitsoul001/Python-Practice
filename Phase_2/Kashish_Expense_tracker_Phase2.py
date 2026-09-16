@@ -1,6 +1,6 @@
 class ExpenseTracker:
-    expenses = []
-    expense = {}
+    def __init__(self):
+        self.expenses = []
     def add_expense(self, name, amount, category):
         self.expense = {
             "Name" : name,
@@ -8,10 +8,10 @@ class ExpenseTracker:
             "Category" : category
         }
         self.expenses.append(self.expense)
-        return self.expenses
+        print(self.expenses)
 
     def view_expenses(self):
-        if not self.expense:
+        if not self.expenses:
             print("No Expenses Yet")
 
         else:
